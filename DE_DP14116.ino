@@ -292,8 +292,8 @@ void messageTickerNormal()
   
   if ( g_frame < frameToggle )
   {
-    dotmatrix.putbitmap( 3, 6, &alien[ g_frame % 5 ][0], 8, 16, GREEN );
-    dotmatrix.putbitmap( 35, 2, &alien[ (g_frame + 2 ) % 5 ][0], 8, 16, ORANGE );
+    dotmatrix.putbitmap( 3, 6, &alien[ g_frame % 5 ][0], 8, 16, GREEN, true );
+    dotmatrix.putbitmap( 35, 2, &alien[ (g_frame + 2 ) % 5 ][0], 8, 16, ORANGE, true );
     dotmatrix.sendframe();
     delay( 100 );
   }
@@ -439,10 +439,8 @@ void messageTickerNormal()
   }
   */
 
-    dotmatrix.putbitmap( 3, 6, &alien[ g_frame % 5 ][0], 8, 16, GREEN );
-    dotmatrix.putbitmap( 35, 2, &alien[ (g_frame + 2 ) % 5 ][0], 8, 16, ORANGE );
-    //dotmatrix.putbitmap( 3, 6, &alien[ g_frame % 5 ][0], 8, 16, GREEN, true );
-    //dotmatrix.putbitmap( 35, 2, &alien[ (g_frame + 2 ) % 5 ][0], 8, 16, ORANGE, true );
+    dotmatrix.putbitmap( 3, 6, &alien[ g_frame % 5 ][0], 8, 16, GREEN, true );
+    dotmatrix.putbitmap( 35, 2, &alien[ (g_frame + 2 ) % 5 ][0], 8, 16, ORANGE, true );
     dotmatrix.sendframe();
     delay( 100 );
 
@@ -481,8 +479,7 @@ byte g_c = 1;
 
 void messageTickerSpecial()
 {
-  dotmatrix.putbitmap( g_x, g_y, &alien[ g_frame % 5 ][0], 8, 16, g_c );
-  //dotmatrix.putbitmap( g_x, g_y, &alien[ g_frame % 5 ][0], 8, 16, g_c, true );
+  dotmatrix.putbitmap( g_x, g_y, &alien[ g_frame % 5 ][0], 8, 16, g_c, true );
   dotmatrix.sendframe();
   delay( 100 );
 
